@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendWise - Interactive Budget Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>SpendWise</h1>
+
+    <div class="card">
+      <label for="budget-input">Set Monthly Budget ($):</label>
+      <div class="input-group">
+        <input type="number" id="budget-input" placeholder="e.g., 1000" min="1" />
+        <button id="set-budget-btn">Set Budget</button>
+      </div>
+    </div>
+
+    <form id="expense-form" class="card">
+      <h3>Add New Expense</h3>
+      <input type="text" id="expense-name" placeholder="Expense description (e.g., Groceries)" required />
+      <input type="number" id="expense-amount" placeholder="Amount ($)" min="0.01" step="0.01" required />
+      <select id="expense-category">
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Entertainment">Entertainment</option>
+      </select>
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <div class="dashboard">
+      <div class="stat-box">
+        <h4>Total Budget</h4>
+        <p id="total-budget">$0.00</p>
+      </div>
+      <div class="stat-box">
+        <h4>Total Spent</h4>
+        <p id="total-spent">$0.00</p>
+      </div>
+      <div class="stat-box">
+        <h4>Remaining</h4>
+        <p id="remaining-balance">$0.00</p>
+      </div>
+    </div>
+
+    <div id="status-message" class="status-banner">
+      Set a budget and add expenses to see your financial status.
+    </div>
+
+    <div class="card">
+      <h3>Expense History</h3>
+      <ul id="expense-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
